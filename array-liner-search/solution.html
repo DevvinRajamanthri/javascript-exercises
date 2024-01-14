@@ -1,0 +1,40 @@
+<html>
+    <head>
+        
+    </head>   
+    <body>
+       <div id = "result"></div> 
+        <script>
+            let result = document.getElementById("result")
+            /**
+             * Given list and target, if target is in the list, return the index. If the target is not in the list, return -1.
+             * 
+             * @param {array} list
+             * @param {number} target
+             * @return index of the value 
+             * hint: you will need for loop in the function
+             */
+            function search(list, target) { //list = [1, 2, 3, 4] and target = 3 
+                     
+
+                for(let i = 0; i < list.length; i++){
+
+                    if (list[i] == target){
+                        return i;
+                    }
+                }
+                return -1;
+            
+            }
+            let index = search([1, 2, 3, 4], 1);
+            console.log(index);
+            index = search([1, 2, 3, 4], 3);
+            console.log(index)
+            index = search([1, 2, 3, 4], 10);
+            console.log(index)
+
+
+             //what do we expect to see here?
+        </script>
+    </body> 
+</html>
