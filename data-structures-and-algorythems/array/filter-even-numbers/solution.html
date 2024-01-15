@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            /**
+             * @param {array} an array of numbers
+             * @return {array} an array of even numbers
+             */  
+          
+            function filterEvenNumbers(list) {   
+                let result = [];               
+                for(let i = 0; i < list.length; i++){
+                    if (list[i]%2==0){
+                    result.push(list[i]);
+                    }
+                }
+                return result  
+            }
+            let evenNumbers = filterEvenNumbers([1, 2, 3, 4, 6]);
+            console.log(evenNumbers)
+        </script>
+    </head>
+</html>
