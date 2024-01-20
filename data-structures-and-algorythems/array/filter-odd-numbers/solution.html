@@ -1,0 +1,25 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+    <script>
+        let array = [1,2,3,4,5,6]
+        function find_odd_elements(){
+            let answer = []
+            for(let i = 0; i < array.length; i++){
+                let remainder = array[i] % 2;
+                if(remainder==1){
+                    answer.push(array[i])
+                    
+                }
+                    
+            }
+         return answer
+        }
+         
+        console.log(find_odd_elements())
+    
+    </script>    
+    </body>
+</html>
