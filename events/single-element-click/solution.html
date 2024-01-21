@@ -10,10 +10,12 @@
     </head>
     <body>
         <div id="click-element"></div>
+        <div id="block display"></div>
         <script>
             //write an event handler which get triggered when the 'click-element' clicked.
             //when clicked toggle background color as follows
             //green (starting color) -> blue -> green ..
+            //if you click more than 1000 times you will be blocked.
             let ColorBlock = document.getElementById("click-element");
             ColorBlock.addEventListener('click',onclick);
             function onclick(){
@@ -22,6 +24,7 @@
                 }else{
                     ColorBlock.style.backgroundColor = "green";
                 }
+              
             }
 
         </script>

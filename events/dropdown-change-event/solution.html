@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <style>
+            #click-element {
+                width: 100px;
+                height: 100px;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="click-element"></div>
+        <select id = "dropbox">
+        <option>
+            red
+        </option>
+        <option>
+            green
+        </option>
+         
+        </option>
+       </select>
+        <script>          
+            let ColorBlock = document.getElementById("click-element");
+            let dropbox = document.getElementById("dropbox");
+         
+            dropbox.addEventListener('change',onchange);
+            function onchange(){
+                if(dropbox.value == "green"){
+                    ColorBlock.style.backgroundColor = "green";
+                }
+                if(dropbox.value == "red"){
+                    ColorBlock.style.backgroundColor = "red";
+                }
+              
+            }
+        
+
+        </script>
+
+    </body>
+</html>
