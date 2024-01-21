@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <style>
+            #click-element {
+                width: 100px;
+                height: 100px;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="click-element"></div>
+        <script>
+            //write an event handler which get triggered when the 'click-element' clicked.
+            //when clicked toggle background color as follows
+            //green (starting color) -> blue -> green ..
+            let ColorBlock = document.getElementById("click-element");
+            ColorBlock.addEventListener('click',onclick);
+            function onclick(){
+                if(ColorBlock.style.backgroundColor== "green"){
+                    ColorBlock.style.backgroundColor = "red";
+                }else{
+                    ColorBlock.style.backgroundColor = "green";
+                }
+            }
+
+        </script>
+
+    </body>
+</html>
