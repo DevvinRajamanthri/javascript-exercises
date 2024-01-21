@@ -12,12 +12,17 @@
         <div id="click-element"></div>
         <select id = "dropbox">
         <option>
+            green
+        </option>
+        <option>
             red
         </option>
         <option>
-            green
+            yellow
         </option>
-         
+        <option>
+            blue
+        </option>
         </option>
        </select>
         <script>          
@@ -31,6 +36,12 @@
                 }
                 if(dropbox.value == "red"){
                     ColorBlock.style.backgroundColor = "red";
+                }
+                if(dropbox.value == "yellow"){
+                    ColorBlock.style.backgroundColor = "yellow";
+                }
+                if(dropbox.value == "blue"){
+                    ColorBlock.style.backgroundColor = "blue";
                 }
               
             }
