@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            
+            //write the function here           
+            function insert(list, n, i){
+                list.splice(i,0,n)              
+                return list
+            }
+            
+            let list = [4, 2, 3];
+            let n = 1; 
+            let i = 1;                                                     
+            let result = insert(list, n, i);
+            console.log(result); 
+            //[4, 1, 2, 3]
+        </script>
+    </body>
+</html>

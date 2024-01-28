@@ -1,0 +1,30 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            
+            //write the function here           
+            function insert(list, n, i){
+                //use a loop
+                let pre = 0;
+                let cur = 0;
+                pre = n
+                for(let j = i; j < list.length; j++){
+                    cur = list[j]
+                    list[j] = pre
+                    pre = cur
+                }
+                list.push(pre)
+                return list
+            }      
+            let list = [4, 2, 3];
+            let n = 1; 
+            let i = 2; 
+            let result = insert(list, n, i);
+            console.log(result); 
+            //[4, 1, 2, 3]
+        </script>
+    </body>
+</html>
