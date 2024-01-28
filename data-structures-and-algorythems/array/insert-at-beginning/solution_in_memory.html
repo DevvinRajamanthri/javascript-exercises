@@ -1,0 +1,32 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            //write the function here
+
+            let list = [2, 3, 4];
+            let n = 1;            
+            function insert_at_beginning(list, n){
+                let pre = 0;
+                let cur = 0;
+                pre = n;
+                for(let i = 0; i < list.length; i++){
+                    cur = list[i] 
+                    list[i] = pre
+                    pre = cur
+                    
+
+                }
+                list.push(pre)
+                return list
+            }
+            
+                
+            let result = insert_at_beginning(list, n);
+            console.log(result); 
+            //[1, 2, 3, 4]
+        </script>
+    </body>
+</html>

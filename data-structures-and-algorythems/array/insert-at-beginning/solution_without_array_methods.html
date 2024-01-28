@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            //write the function here
+
+            let list = [2, 3, 4];
+            let n = 1;            
+            function insert_at_beginning(list, n){
+                let newarr = []
+                newarr.push(n);
+                for(let i = 0; i < list.length;i++){
+                    newarr.push(list[i]);
+                }
+                return newarr
+            }
+            
+                
+            let result = insert_at_beginning(list, n);
+            console.log(result); 
+            //[1, 2, 3, 4]
+        </script>
+    </body>
+</html>
