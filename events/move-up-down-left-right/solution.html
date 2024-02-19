@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <style>
+            #box{
+                background-color: black;
+                width: 50px;
+                height: 50px;
+                position: absolute;
+            
+            }
+            #container{
+               background-color: blue; 
+               width: 400px;
+               height: 400px;
+               position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="container">
+            <div id="box">
+
+            </div>
+        </div>
+        <button id = "top">top</button>
+        <button id = "down">down</button>
+        <button id = "right">right</button>
+        <button id = "left">left</button>
+        <script>
+            let up = 0;
+            let left = 0;
+            let box = document.getElementById("box");
+            let container = document.getElementById("container");
+            let top_Button = document.getElementById("top");
+            let down_Button = document.getElementById("down");
+            let right_Button = document.getElementById("right");
+            let left_Button = document.getElementById("left");
+            top_Button.addEventListener("click",move_up);
+            down_Button.addEventListener("click",move_down);
+            right_Button.addEventListener("click",move_right);
+            left_Button.addEventListener("click",move_left);
+            function move_up(){
+                if(up == 0){
+                    
+                }else{
+                    up = up - 10;
+                }
+                
+                console.log(up)
+                box.style.top = up + "px"; 
+            }
+            function move_down(){
+                if(up == 350){
+                    
+                }else{
+                    up = up + 10;
+                }
+               
+                console.log(up)
+                box.style.top = up + "px";
+            }
+            function move_left(){
+                if(left == 0){
+                    
+                }else{
+                    left = left - 10;
+                }
+                
+                console.log(up)
+                box.style.left = left + "px";
+            }
+
+            function move_right(){
+                if(left == 350){
+                    
+                }else{
+                    left = left + 10;
+                }
+                console.log(up)
+                box.style.left = left + "px";
+                
+            }
+            
+        </script>
+    </body>
+</html>
