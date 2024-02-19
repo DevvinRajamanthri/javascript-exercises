@@ -41,43 +41,28 @@
             right_Button.addEventListener("click",move_right);
             left_Button.addEventListener("click",move_left);
             function move_up(){
-                if(up == 0){
-                    
-                }else{
+                if(up > 0){
                     up = up - 10;
                 }
-                
-                console.log(up)
                 box.style.top = up + "px"; 
             }
             function move_down(){
-                if(up == 350){
-                    
-                }else{
+                if(up < 350){
                     up = up + 10;
                 }
-               
-                console.log(up)
                 box.style.top = up + "px";
             }
             function move_left(){
-                if(left == 0){
-                    
-                }else{
+                if(left > 0){
                     left = left - 10;
                 }
-                
-                console.log(up)
                 box.style.left = left + "px";
             }
 
             function move_right(){
-                if(left == 350){
-                    
-                }else{
+                if(left < 350){
                     left = left + 10;
                 }
-                console.log(up)
                 box.style.left = left + "px";
                 
             }
