@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            .list-item {
+                border-style: solid;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- on mouse over the list item, set the list item background color to light gray -->
+        <ul class="list">
+            <li class ="list-item">
+                Item 1
+            </li>
+            <li class="list-item">
+                Item 2
+            </li>
+            <li class="list-item">
+                Item 3
+            </li>
+        </ul> 
+        
+        <script>
+            let lists = document.getElementsByClassName("list-item");
+            for(let i = 0; i < lists.length; i++){
+                lists[i].addEventListener("mouseover",change_color);
+                lists[i].addEventListener("mouseleave",unchange_color);
+            }       
+            
+            function change_color(e){    
+                let triggeredElement = e.target;
+                triggeredElement.style.color = "blue";
+            }   
+              
+            
+            function unchange_color(e){  
+                let triggeredElement = e.target; 
+                triggeredElement.style.color = "black";
+            }
+            
+                    
+
+        </script>         
+    </body>
+</html>
