@@ -3,8 +3,34 @@
 
     </head>
     <body>
+        <canvas id = "canvas" width = "200px" height = "200 px"></canvas>
         <script>
-            
+            let canvas = document.getElementById("canvas");
+
+            canvas.addEventListener("mousemove", onmousemove);
+            canvas.addEventListener("mouseover", mousedown);
+            var pre_x = 0;
+            var pre_y = 0;
+            //function mousedown() {
+
+            //}
+
+            function onmousemove(e) {
+                let y = e.clientY;
+                let x = e.clientX;
+                    
+                let twodcanvas = canvas.getContext("2d");
+                twodcanvas.beginPath();
+                twodcanvas.moveTo(pre_x, pre_y);
+                twodcanvas.lineTo(x, y); 
+                pre_x = x
+                pre_y = y
+                    console.log(pre_x,pre_y,"pre")
+                    console.log(x,y)
+                    twodcanvas.strokeStyle = "red";
+                    twodcanvas.stroke();
+                    
+            }
         </script>
     </body>
 </html>
