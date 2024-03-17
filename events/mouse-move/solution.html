@@ -5,32 +5,43 @@
     <body>
         <canvas id = "canvas" width = "200px" height = "200 px"></canvas>
         <script>
-            let canvas = document.getElementById("canvas");
+let canvas = document.getElementById("canvas");
 
-            canvas.addEventListener("mousemove", onmousemove);
-            canvas.addEventListener("mouseover", mousedown);
-            var pre_x = 0;
-            var pre_y = 0;
-            //function mousedown() {
+canvas.addEventListener("mousemove", onmousemove);
+canvas.addEventListener("mousedown", mousedown);
+canvas.addEventListener("mouseup", mouseup);
+var pre_x = 0;
+var pre_y = 0;
+var draw = 0;
+function mousedown() {
+	draw = 1
+	console.log("down",draw)
+}
+function mouseup() {
+	draw = 0
+	console.log("up",draw)
+}
 
-            //}
+function onmousemove(e) {
+  var y = e.clientY;
+  var x = e.clientX;
+	if(draw == 1){
+ 		let twodcanvas = canvas.getContext("2d");  
+ 		twodcanvas.beginPath();
+ 		twodcanvas.moveTo(pre_x, pre_y);
+ 		twodcanvas.lineTo(x, y); 
+ 		pre_x = x
+ 		pre_y = y
+		console.log(pre_x,pre_y,"pre")
+		console.log(x,y)
+		twodcanvas.strokeStyle = "red";
+		twodcanvas.stroke();
+ }
+  
+}
 
-            function onmousemove(e) {
-                let y = e.clientY;
-                let x = e.clientX;
-                    
-                let twodcanvas = canvas.getContext("2d");
-                twodcanvas.beginPath();
-                twodcanvas.moveTo(pre_x, pre_y);
-                twodcanvas.lineTo(x, y); 
-                pre_x = x
-                pre_y = y
-                    console.log(pre_x,pre_y,"pre")
-                    console.log(x,y)
-                    twodcanvas.strokeStyle = "red";
-                    twodcanvas.stroke();
-                    
-            }
+console.log("up",draw)
+
         </script>
     </body>
 </html>
