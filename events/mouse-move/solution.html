@@ -5,6 +5,7 @@
     <body>
         <canvas id = "canvas" width = "200px" height = "200 px"></canvas>
         <script>
+
 let canvas = document.getElementById("canvas");
 
 canvas.addEventListener("mousemove", onmousemove);
@@ -13,18 +14,21 @@ canvas.addEventListener("mouseup", mouseup);
 var pre_x = 0;
 var pre_y = 0;
 var draw = 0;
-function mousedown() {
-	draw = 1
-	console.log("down",draw)
-}
+
+/**
+ * This function tells the mousemove when to stop drawing.
+ */
 function mouseup() {
-	draw = 0
-	console.log("up",draw)
+	draw = 0;
 }
 
+/**
+ * This function is resposible for drawing a line from the previous point to the next.
+ * 
+ */
 function onmousemove(e) {
-  var y = e.clientY;
-  var x = e.clientX;
+  let y = e.clientY;
+  let x = e.clientX;
 	if(draw == 1){
  		let twodcanvas = canvas.getContext("2d");  
  		twodcanvas.beginPath();
@@ -32,15 +36,20 @@ function onmousemove(e) {
  		twodcanvas.lineTo(x, y); 
  		pre_x = x
  		pre_y = y
-		console.log(pre_x,pre_y,"pre")
-		console.log(x,y)
+	
 		twodcanvas.strokeStyle = "red";
 		twodcanvas.stroke();
  }
-  
+  /**
+ * This function tells the mousemove when to start drawing and where to start.
+ */
 }
-
-console.log("up",draw)
+function mousedown(e) {
+  pre_x = e.clientX
+  pre_y = e.clientY
+  draw = 1;
+	
+}
 
         </script>
     </body>
