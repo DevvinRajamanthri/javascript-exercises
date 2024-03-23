@@ -1,55 +1,61 @@
+
 <html>
-    <head>
+    <body><input type="color" id="colorpicker"><p>color picker</p><br>
+      <canvas id = "canvas" width = "500px" height = "500px"></canvas>
+      
+      <style>
+        #canvas{
+          border-style: dashed;
+          border-width: 10px;
+          border-color: black;
+          
+        }
+      </style>
+      <script>
+        let canvas = document.getElementById("canvas");
+        var colorpicker = document.getElementById("colorpicker");
+        canvas.addEventListener("mousemove", onmousemove);
+        canvas.addEventListener("mousedown", mousedown);
+        canvas.addEventListener("mouseup", mouseup);
+        var pre_x = 0;
+        var pre_y = 0;
+        var draw = 0;
 
-    </head>
-    <body>
-        <canvas id = "canvas" width = "200px" height = "200 px"></canvas>
-        <script>
+        /**
+         * This function tells the mousemove when to stop drawing.
+         */
+        function mouseup() {
+          draw = 0;
+        }
 
-let canvas = document.getElementById("canvas");
-
-canvas.addEventListener("mousemove", onmousemove);
-canvas.addEventListener("mousedown", mousedown);
-canvas.addEventListener("mouseup", mouseup);
-var pre_x = 0;
-var pre_y = 0;
-var draw = 0;
-
-/**
- * This function tells the mousemove when to stop drawing.
- */
-function mouseup() {
-	draw = 0;
-}
-
-/**
- * This function is resposible for drawing a line from the previous point to the next.
- * 
- */
-function onmousemove(e) {
-  let y = e.clientY;
-  let x = e.clientX;
-	if(draw == 1){
- 		let twodcanvas = canvas.getContext("2d");  
- 		twodcanvas.beginPath();
- 		twodcanvas.moveTo(pre_x, pre_y);
- 		twodcanvas.lineTo(x, y); 
- 		pre_x = x
- 		pre_y = y
-	
-		twodcanvas.strokeStyle = "red";
-		twodcanvas.stroke();
- }
-  /**
- * This function tells the mousemove when to start drawing and where to start.
- */
-}
-function mousedown(e) {
-  pre_x = e.clientX
-  pre_y = e.clientY
-  draw = 1;
-	
-}
+        /**
+         * This function is resposible for drawing a line from the previous point to the next.
+         * 
+         */
+        function onmousemove(e) {
+          let y = e.clientY;
+          let x = e.clientX;
+          if(draw == 1){
+            let twodcanvas = canvas.getContext("2d");  
+            twodcanvas.beginPath();
+            twodcanvas.moveTo(pre_x, pre_y);
+            twodcanvas.lineTo(x, y); 
+            pre_x = x
+            pre_y = y
+            console.log(colorpicker.value)
+            twodcanvas.strokeStyle = colorpicker.value;
+            twodcanvas.stroke();
+        }
+          /**
+         * This function tells the mousemove when to start drawing and where to start.
+         */
+        }
+        function mousedown(e) {
+          pre_x = e.clientX
+          pre_y = e.clientY
+          draw = 1;
+          
+        }
 
         </script>
     </body>
