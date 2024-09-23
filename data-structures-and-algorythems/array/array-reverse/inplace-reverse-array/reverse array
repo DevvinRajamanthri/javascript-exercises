@@ -1,0 +1,19 @@
+function goofyahh() {
+  let a = [10, 11, 12, 13,14]
+  let c = 0
+  let p = 0
+   //r is the index
+   // a[i] is the number at the index
+   // i is the index
+  // a[r] is the number at the index
+ 
+  for (let i = 0; i < a.length/2 ; i++) {
+   	let r = (a.length - 1) - i;
+    c = a[i]
+   	a[i] = a[r]
+    a[r] = c
+  }
+ 
+  console.log(a)
+}
+goofyahh()
