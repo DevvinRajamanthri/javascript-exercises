@@ -1,0 +1,16 @@
+
+<html>
+    <body>
+        
+        <script>
+        let a = [1,2,3,4,5]
+        function multiply(){
+            for(let i = 0; i < a.length; i++){
+            a[i] = a[i] * 2
+            }
+            console.log(a)
+        }    
+        multiply()
+        </script>
+    </body>
+</html>

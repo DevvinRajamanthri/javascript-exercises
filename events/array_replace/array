@@ -1,0 +1,23 @@
+
+<html>
+    <body>
+        
+        <script>
+        function replace(target, a) {
+  for(let i = 0; i < a.length; i++) {
+    if (a[i] == target) {
+      a.splice(i, 1)
+      i = i - 1
+      console.log(a)
+      
+    }
+  }
+  return a;
+}
+let a = [1, 2, 3, 3, 5]
+let target = 3;
+replace(target, a)
+
+        </script>
+    </body>
+</html>
