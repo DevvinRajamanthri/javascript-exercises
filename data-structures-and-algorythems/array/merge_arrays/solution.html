@@ -1,0 +1,19 @@
+
+<html>
+    <body>
+        <script>          
+            function mergeArray(a1,a2,c) {
+            for(let i = 0; i < a2.length; i++){
+                c.push(a1[i])
+                c.push(a2[i])
+            }
+            return c
+            }
+            let c = [];
+            let array1 = [1, 2, 3]
+            let array2 = [1, 2, 3]
+            let value = mergeArray(array1, array2,c);
+            console.log(value)
+        </script>
+    </body>
+</html>
