@@ -1,0 +1,74 @@
+<html>
+<body>
+<h1 id="riddles"></h1>
+  <input id="answers" type="text" placeholder="Answer here">
+  <button id="submitBtn">Submit</button>
+  <p id="result"></p>
+  <script>
+   let riddles = [
+      "What gets wet while drying?",
+      "What has hands but cannot clap?",
+      "What is full of holes but still holds water?",
+      "What has a neck but no head?",
+      "What can you catch but not throw?",
+      "What goes up but never comes down?",
+      "What has branches, but no fruit, trunk or leaves?",
+      "I am an odd number. Take away a letter and I become even. What number am I?",
+      "What belongs to you, but everyone else uses it?",
+      "What is always in front of you but can't be seen?"
+    ];
+
+    let answers = [
+      "towel",
+      "clock",
+      "sponge",
+      "bottle",
+      "cold",
+      "age",
+      "bank",
+      "seven",
+      "your name",
+      "the future"
+    ];
+
+    let current = 0;
+    let wrong = 0;
+
+    function show() {
+      document.getElementById("riddles").innerText = riddles[current];
+      document.getElementById("answers").value = "";
+      document.getElementById("result").innerText = "";
+    }
+
+    show();
+
+    document.getElementById("submitBtn").onclick = function() {
+      let answer = document.getElementById("answers").value.toLowerCase().trim();
+
+      if (answer === answers[current]) {
+        current++;
+        wrong = 0;
+        if (current < riddles.length) {
+          document.getElementById("result").innerText = "Correct!";
+          show();
+        } else {
+          document.getElementById("result").innerText = "You finished!";
+          document.getElementById("riddles").innerText = "";
+          document.getElementById("answers").style.display = "none";
+          document.getElementById("submitBtn").style.display = "none";
+        }
+      } else {
+        wrong++;
+        if (wrong === 3) {
+          current = 0;
+          wrong = 0;
+          document.getElementById("result").innerText = "Too many wrong tries! Restarting...";
+          show();
+        } else {
+          document.getElementById("result").innerText = "Wrong, try again.";
+        }
+      }
+    }
+  </script>
+</body>
+</html>
