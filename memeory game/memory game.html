@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #game {
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .card {
+        width: 80px;
+        height: 80px;
+        background: #333;
+        color: white;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Memory Game (6 cards)</h2>
+    <div id="game"></div>
+
+    <script>
+      let cards = [1,1,2,2,3,3];
+      cards.sort(() => Math.random() - 0.5); // shuffle
+      let game = document.getElementById("game");
+      let flipped = [];
+      let lock = false; // prevents clicks
+
+      cards.forEach((num) => {
+        let div = document.createElement("div");
+        div.className = "card";
+        div.textContent = "?";
+
+        div.onclick = function() {
+          if (lock || div.textContent !== "?") return; 
+          div.textContent = num;
+          flipped.push({div, num});
+
+          if (flipped.length === 2) {
+            if (flipped[0].num !== flipped[1].num) {
+              lock = true; // lock the board
+              setTimeout(() => {
+                flipped[0].div.textContent = "?";
+                flipped[1].div.textContent = "?";
+                flipped = [];
+                lock = false; // unlock
+              }, 800);
+            } else {
+              flipped = [];
+            }
+          }
+        };
+
+        game.appendChild(div);
+      });
+    </script>
+  </body>
+</html>

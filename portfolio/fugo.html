@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-image: url("fugo.webp");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "menu content"
+          "footer footer";
+        grid-template-columns: 1fr 3fr;
+        gap: 5px;
+        background-color: rgba(99, 52, 102);
+        padding: 10px;
+        border: 5px solid rgb(231, 160, 80);
+      }
+      .container > div {
+        background-color: rgb(184, 100, 180);
+        padding: 10px;
+        border: 5px solid rgb(243, 215, 136);
+      }
+      .header { grid-area: header; text-align: center; }
+      .menu { grid-area: menu; }
+      .content { grid-area: content; }
+      .footer { grid-area: footer; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Pannacotta Fugo</div>
+      <div class="menu">
+        <a href="giorno.html"><button>Giorno</button></a>
+        <a href="narancia.html"><button>Narancia</button></a>
+        <a href="trish.html"><button>Trish</button></a>
+        <a href="mista.html"><button>Mista</button></a>
+
+      </div>
+      <div class="content">
+        Full name: Pannacotta Fugo. <br />
+        Age: 16. <br />
+        Stand: Purple Haze — releases a deadly virus that dissolves anything it touches. <br />
+        Personality: highly intelligent, but struggles with anger and guilt. <br />
+        Background: joined Bucciarati’s team after being expelled from school for assault. <br />
+        Trivia: In the story “Purple Haze Feedback,” he later redeems himself. <br />
+      </div>
+      <div class="footer">
+        © 2025 Devvin Rajamanthri | devvinrajamanthri@gmail.com |
+        <a href="https://github.com/DevvinRajamanthri">GitHub</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-image: url("image1.avif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .container {
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "menu content"
+          "footer footer";
+        grid-template-columns: 1fr 3fr;
+        gap: 5px;
+        background-color: rgba(99, 52, 102);
+        padding: 10px;
+        border: 5px solid rgb(231, 160, 80);
+      }
+      .container > div {
+        background-color: rgb(184, 100, 180);
+        padding: 10px;
+        border: 5px solid rgb(243, 215, 136);
+      }
+      .header { grid-area: header; text-align: center; }
+      .menu { grid-area: menu; }
+      .content { grid-area: content; }
+      .footer { grid-area: footer; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Narancia Ghirga</div>
+      <div class="menu">
+        <a href="giorno.html"><button>Giorno</button></a>
+        <a href="trish.html"><button>Trish</button></a>
+        <a href="fugo.html"><button>Fugo</button></a>
+        <a href="mista.html"><button>Mista</button></a>
+
+      </div>
+      <div class="content">
+        Full name: Narancia Ghirga. <br />
+        Age: 17. <br />
+        Stand: Aerosmith — a small fighter plane Stand armed with machine guns and bombs. <br />
+        Personality: loyal, loud, childish, but brave and kind-hearted. <br />
+        Role: Member of Bucciarati’s team in Passione. <br />
+        Abilities: Aerosmith can detect enemies by tracking their CO₂ and attack from long range. <br />
+        Fate: Tragically dies near the end of Part 5. <br />
+      </div>
+      <div class="footer">
+        © 2025 Devvin Rajamanthri | devvinrajamanthri@gmail.com |
+        <a href="https://github.com/DevvinRajamanthri">GitHub</a>
+      </div>
+    </div>
+  </body>
+</html>
